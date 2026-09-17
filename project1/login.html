@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login</title>
+
+<link rel="stylesheet" href="dream.css">
+
+</head><body><div class="login-box">
+
+    <!-- Login Image -->
+    <img
+        src="https://images.unsplash.com/photo-1748228885250-49564b614db9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Login Image"
+        class="login-image"
+    >
+
+    <h2>Login</h2>
+
+    <input
+        type="email"
+        id="email"
+        placeholder="Enter Email ID"
+    >
+
+    <input
+        type="password"
+        id="password"
+        placeholder="Enter Password"
+    >
+
+    <button onclick="login()">Login</button>
+
+    <p id="message"></p>
+
+</div>
+<!-- FAQ SECTION -->
+<section class="faq-section">
+
+    <h2>Frequently Asked Questions</h2>
+
+    <!-- Question 1 -->
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(0)">
+            <span>1. What is the main purpose of your project?</span>
+            <span class="plus" id="plus0">+</span>
+        </div>
+
+        <div class="faq-answer" id="answer0">
+            My project is a House/Map Creator that helps users create
+            a house layout based on their plot and room dimensions.
+        </div>
+    </div>
+
+
+    <!-- Question 2 -->
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(1)">
+            <span>2. How does your project create the house layout?</span>
+            <span class="plus" id="plus1">+</span>
+        </div>
+
+        <div class="faq-answer" id="answer1">
+            JavaScript takes the plot and room dimensions and automatically
+            places the rooms inside the plot without overlapping.
+        </div>
+    </div>
+
+
+    <!-- Question 3 -->
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(2)">
+            <span>3. Why did you use HTML, CSS and JavaScript?</span>
+            <span class="plus" id="plus2">+</span>
+        </div>
+
+        <div class="faq-answer" id="answer2">
+            HTML creates the structure, CSS designs the interface,
+            and JavaScript handles the logic and layout.
+        </div>
+    </div>
+
+
+    <!-- Question 4 -->
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(3)">
+            <span>4. How do you check that rooms don't exceed the plot area?</span>
+            <span class="plus" id="plus3">+</span>
+        </div>
+
+        <div class="faq-answer" id="answer3">
+            I calculate the total area of all rooms and compare it
+            with the plot area. If it exceeds the plot area, the room
+            is not added.
+        </div>
+    </div>
+
+
+    <!-- Question 5 -->
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(4)">
+            <span>5. How does generateFloorPlan() work?</span>
+            <span class="plus" id="plus4">+</span>
+        </div>
+
+        <div class="faq-answer" id="answer4">
+            It converts the plot and room dimensions into pixels and
+            creates room boxes inside the plot using JavaScript.
+        </div>
+    </div>
+
+
+    <!-- Question 6 -->
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(5)">
+            <span>6. How do you prevent rooms from overlapping?</span>
+            <span class="plus" id="plus5">+</span>
+        </div>
+
+        <div class="faq-answer" id="answer5">
+            I use a collision-checking function that compares the
+            position and size of each room with existing rooms.
+        </div>
+    </div>
+
+
+    <!-- Question 7 -->
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(6)">
+            <span>7. How are you saving the house design?</span>
+            <span class="plus" id="plus6">+</span>
+        </div>
+
+        <div class="faq-answer" id="answer6">
+            Currently, I use localStorage to save the plot and room
+            information in the browser.
+        </div>
+    </div>
+
+
+    <!-- Question 8 -->
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(7)">
+            <span>8. What features would you add in the future?</span>
+            <span class="plus" id="plus7">+</span>
+        </div>
+
+        <div class="faq-answer" id="answer7">
+            I would add user accounts, MongoDB database storage,
+            draggable and resizable rooms, doors, windows, and
+            multiple saved house designs.
+        </div>
+    </div>
+
+</section>
+
+
+<script>
+
+    function toggleAnswer(index) {
+
+        const answer =
+            document.getElementById("answer" + index);
+
+        const plus =
+            document.getElementById("plus" + index);
+
+
+        if (answer.style.display === "block") {
+
+            answer.style.display = "none";
+
+            plus.innerText = "+";
+
+        } else {
+
+            answer.style.display = "block";
+
+            plus.innerText = "−";
+
+        }
+    }
+
+</script>
+
+<script src="login.js"></script>
+
+</body>
+</html>

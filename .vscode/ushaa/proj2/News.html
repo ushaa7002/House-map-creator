@@ -1,0 +1,488 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>News Insights | Smarter News Analysis</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="reporter.css">
+</head>
+
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="site-header">
+
+    <a
+      class="brand"
+      href="#top"
+      aria-label="News Insights home"
+    >
+      <span>📰</span>
+      News <b>Insights</b>
+    </a>
+
+
+    <nav aria-label="Primary navigation">
+
+      <a href="#top">Home</a>
+
+      <a href="#trending">Trending</a>
+
+      <a href="#dashboard">Insights</a>
+
+      <a href="#bookmarks">Saved</a>
+
+    </nav>
+
+
+    <button
+      id="themeToggle"
+      class="icon-button"
+      aria-label="Switch to dark mode"
+      type="button"
+    >
+      🌙
+    </button>
+
+  </header>
+
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main id="top" class="container">
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+      <p class="eyebrow">
+        NEWS, EXPLAINED
+      </p>
+
+      <h1>
+        See beyond the headline.
+      </h1>
+
+      <p>
+        Explore today's stories, track emerging conversations,
+        and understand the tone behind the news.
+      </p>
+
+
+      <!-- SEARCH -->
+
+      <label
+        class="search-box"
+        for="searchInput"
+      >
+
+        <span>⌕</span>
+
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search topics, sources, or keywords..."
+          autocomplete="off"
+        >
+
+      </label>
+
+    </section>
+
+
+
+    <!-- ================= FILTERS ================= -->
+
+    <section
+      class="filters"
+      aria-label="News categories"
+    >
+
+      <button
+        class="filter active"
+        data-category="All"
+        type="button"
+      >
+        All stories
+      </button>
+
+
+      <button
+        class="filter"
+        data-category="Technology"
+        type="button"
+      >
+        Technology
+      </button>
+
+
+      <button
+        class="filter"
+        data-category="Business"
+        type="button"
+      >
+        Business
+      </button>
+
+
+      <button
+        class="filter"
+        data-category="Sports"
+        type="button"
+      >
+        Sports
+      </button>
+
+
+      <button
+        class="filter"
+        data-category="Science"
+        type="button"
+      >
+        Science
+      </button>
+
+
+      <button
+        class="filter"
+        data-category="World"
+        type="button"
+      >
+        World
+      </button>
+
+    </section>
+
+
+
+    <!-- ================= NEWS + SIDEBAR ================= -->
+
+    <section class="content-layout">
+
+
+      <!-- NEWS -->
+
+      <div>
+
+        <div class="section-heading">
+
+          <div>
+
+            <p class="eyebrow">
+              LATEST COVERAGE
+            </p>
+
+            <h2>
+              Today's news
+            </h2>
+
+          </div>
+
+
+          <span
+            id="resultCount"
+            class="result-count"
+          >
+          </span>
+
+        </div>
+
+
+        <!-- JavaScript will insert news cards here -->
+
+        <div
+          id="newsGrid"
+          class="news-grid"
+          aria-live="polite"
+        >
+        </div>
+
+
+        <!-- Empty search result -->
+
+        <p
+          id="emptyState"
+          class="empty-state"
+          hidden
+        >
+          No stories match your search.
+          Try another keyword or category.
+        </p>
+
+      </div>
+
+
+
+      <!-- ================= SIDEBAR ================= -->
+
+      <aside
+        id="trending"
+        class="sidebar"
+      >
+
+
+        <!-- TRENDING -->
+
+        <div class="panel">
+
+          <p class="eyebrow">
+            WHAT'S RISING
+          </p>
+
+          <h2>
+            Trending topics
+          </h2>
+
+
+          <ol
+            id="trendingList"
+            class="trending-list"
+          >
+          </ol>
+
+        </div>
+
+
+
+        <!-- SENTIMENT -->
+
+        <div class="panel sentiment-panel">
+
+          <p class="eyebrow">
+            DAILY PULSE
+          </p>
+
+          <h2>
+            News sentiment
+          </h2>
+
+
+          <!-- JavaScript inserts sentiment bars -->
+
+          <div
+            id="sentimentBars"
+            class="sentiment-bars"
+          >
+          </div>
+
+
+          <p class="muted">
+            Based on the stories currently displayed.
+          </p>
+
+        </div>
+
+      </aside>
+
+    </section>
+
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section
+      id="dashboard"
+      class="dashboard"
+    >
+
+
+      <div class="section-heading">
+
+        <div>
+
+          <p class="eyebrow">
+            AT A GLANCE
+          </p>
+
+          <h2>
+            News statistics
+          </h2>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- STATISTICS -->
+
+      <div class="stats-grid">
+
+
+        <article class="stat-card">
+
+          <span>
+            Total stories
+          </span>
+
+          <strong id="totalStories">
+            0
+          </strong>
+
+          <small>
+            in this demo feed
+          </small>
+
+        </article>
+
+
+
+        <article class="stat-card">
+
+          <span>
+            Most active
+          </span>
+
+          <strong id="topCategory">
+            —
+          </strong>
+
+          <small>
+            leading category
+          </small>
+
+        </article>
+
+
+
+        <article class="stat-card">
+
+          <span>
+            Saved articles
+          </span>
+
+          <strong id="savedCount">
+            0
+          </strong>
+
+          <small>
+            your reading list
+          </small>
+
+        </article>
+
+      </div>
+
+
+
+      <!-- CATEGORY CHART -->
+
+      <div class="chart-card">
+
+        <div>
+
+          <p class="eyebrow">
+            CATEGORY ACTIVITY
+          </p>
+
+          <h3>
+            Stories by section
+          </h3>
+
+        </div>
+
+
+        <!-- JavaScript creates chart bars here -->
+
+        <div
+          id="categoryChart"
+          class="bar-chart"
+          aria-label="Article count by category"
+        >
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ================= BOOKMARKS ================= -->
+
+    <section
+      id="bookmarks"
+      class="bookmarks-section"
+    >
+
+
+      <div class="section-heading">
+
+        <div>
+
+          <p class="eyebrow">
+            READ LATER
+          </p>
+
+          <h2>
+            Saved articles
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <!-- JavaScript inserts saved articles here -->
+
+      <div
+        id="bookmarkGrid"
+        class="bookmark-grid"
+      >
+      </div>
+
+
+      <!-- Shown when there are no bookmarks -->
+
+      <p
+        id="bookmarkEmpty"
+        class="empty-state"
+      >
+        No saved articles yet.
+        Use the bookmark icon on any story
+        to build your reading list.
+      </p>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    News Insights · A responsive front-end demo.
+    Connect a News API to display live content.
+
+  </footer>
+
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script src="translate.js"></script>
+
+</body>
+
+</html>
+```

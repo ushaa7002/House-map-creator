@@ -1,0 +1,420 @@
+.login-box {
+    width: 350px;
+    margin: 100px auto;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 10px #76b90a;
+    border-radius: 10px;
+}
+
+.login-box input {
+    display: rgb(203, 31, 36);
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    box-sizing: border-box;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    cursor: pointer;
+}
+
+#message {
+    color: red;
+}
+
+.login-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+#floorPlan {
+    width: 100%;
+    min-height: 650px;
+    overflow: auto;
+    padding: 20px;
+    background: #34a32c;
+}
+/* HOUSE LAYOUT */
+
+.layout-section {
+    margin: 30px auto;
+    max-width: 1100px;
+    padding: 20px;
+}
+
+.layout-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.room-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.room-controls input,
+.room-controls select {
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.room-controls button {
+    padding: 9px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Main layout */
+
+.layout-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+#housePlot {
+    position: relative;
+    width: 600px;
+    height: 450px;
+    border: 4px solid #222;
+    background: #f8f8f8;
+    overflow: hidden;
+}
+
+/* Individual room */
+
+.room {
+    position: absolute;
+    border: 2px solid #333;
+    background: #f1e723;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: move;
+    user-select: none;
+    min-width: 30px;
+    min-height: 30px;
+}
+
+.room strong {
+    font-size: 14px;
+}
+
+.room span {
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.delete-room {
+    position: absolute;
+    top: 2px;
+    right: 3px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Room list */
+
+.room-list {
+    width: 250px;
+    padding: 15px;
+    border: 1px solid #3946d6;
+    border-radius: 10px;
+}
+
+.room-item {
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.room-item button {
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+    .layout-container {
+        flex-direction: column;
+    }
+
+    #housePlot {
+        width: 90vw;
+        height: 70vw;
+    }
+
+    .room-list {
+        width: 100%;
+    }
+}
+
+.house-boundary {
+    border: 4px solid #222;
+    background: white;
+    margin: 30px auto;
+    box-sizing: border-box;
+}
+
+.room {
+    position: absolute;
+    border: 2px solid #333;
+    background: #f8f8f8;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 5px;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    font-size: 14px;
+}
+
+.room strong {
+    font-size: 16px;
+}
+
+.room span {
+    font-size: 13px;
+}
+
+.room small {
+    font-size: 11px;
+}
+
+.plot-label {
+    position: absolute;
+
+    top: -28px;
+    left: 0;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.error-message {
+    padding: 40px;
+    text-align: center;
+    color: red;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #437db7;
+}
+
+header {
+    background: #222;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 60px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1800px;
+    margin: 40px auto;
+}
+
+.card {
+    background: rgb(155, 41, 41);
+    padding: 40px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.inputs {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input,
+select {
+    padding: 30px;
+    border: 1px solid #29aa43;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #333;
+    color: white;
+    margin: 5px;
+}
+
+button:hover {
+    background: #555;
+}
+
+.room-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: end;
+}
+
+.room {
+    background: #13b31b;
+    border: 2px solid #555;
+    padding: 10px;
+    text-align: center;
+    position: absolute;
+}
+
+#floorPlan {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-color: #f5f8f8;
+    border: 3px solid #333;
+    overflow: auto;
+}
+
+.room-list {
+    margin-top: 15px;
+}
+
+.room-item {
+    padding: 12px;
+    margin: 8px 0;
+    background: #a02323;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* =========================
+   FAQ SECTION
+========================= */
+
+.faq-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.faq-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.faq-item {
+    border-bottom: 1px solid #ccc;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 10px;
+
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.faq-question:hover {
+    background: #f5f5f5;
+}
+
+.plus {
+    font-size: 25px;
+    font-weight: bold;
+    min-width: 30px;
+    text-align: center;
+}
+
+.faq-answer {
+    display: none;
+
+    padding: 0 40px 18px 10px;
+
+    line-height: 1.6;
+    color: #120d0d;
+}
+
+.result {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.danger {
+    background: #e71321;
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 95%;
+    }
+
+    .room-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #floorPlan {
+        height: 400px;
+    }
+}

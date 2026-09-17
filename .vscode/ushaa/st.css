@@ -1,0 +1,14 @@
+body {
+    background: rgb(203, 143, 181);
+}
+
+h1,h2,h3 {
+    color: rgb(69, 21, 212);
+}
+button{
+    background-color: rgb(28, 215, 84);
+    color:#1a1817;
+}
+#box{
+    background-color: pink;
+}
